@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /adtest
+
+Sitemap: https://hobbada.github.io/sitemap.xml
