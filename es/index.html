@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="es"><head><base href=/ ><title>Creador de Equipos - Generador Aleatorio Equilibrado | Team Maker</title><meta charset=utf-8><meta name="description" content="Crea equipos equilibrados automáticamente para deportes, juegos y más."><meta name="keywords" content="creador de equipos, generador de equipos, equipos aleatorios, sorteo de equipos, dividir en equipos, hacer equipos"><meta name=format-detection content="telephone=no"><meta name=msapplication-tap-highlight content=no><meta name=viewport content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width"><link rel=icon type=image/ico href=favicon.ico><meta property=og:type content=website><meta property="og:title" content="Creador de Equipos - Generador Aleatorio Equilibrado | Team Maker"><meta property=og:image content=https://hobbada.github.io/og_img.jpg><meta property="og:url" content="https://hobbada.github.io/es/"><meta property="og:description" content="Crea equipos equilibrados automáticamente para deportes, juegos y más."><link rel=preconnect href=https://cdn.jsdelivr.net crossorigin><link rel=preload as=style crossorigin href=https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel=stylesheet crossorigin href=https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css></noscript><script>const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+<!DOCTYPE html><html lang="es"><head><base href=/ ><title>Creador de Equipos - Generador Aleatorio Equilibrado | Team Maker</title><meta charset=utf-8><meta name="description" content="Crea equipos equilibrados automáticamente para deportes, juegos y más."><meta name="keywords" content="creador de equipos, generador de equipos, equipos aleatorios, sorteo de equipos, dividir en equipos, hacer equipos"><meta name=format-detection content="telephone=no"><meta name=msapplication-tap-highlight content=no><meta name=viewport content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width"><meta name=google-adsense-account content=ca-pub-4535083787375333><link rel=icon type=image/ico href=favicon.ico><meta property=og:type content=website><meta property="og:title" content="Creador de Equipos - Generador Aleatorio Equilibrado | Team Maker"><meta property=og:image content=https://hobbada.github.io/og_img.jpg><meta property="og:url" content="https://hobbada.github.io/es/"><meta property="og:description" content="Crea equipos equilibrados automáticamente para deportes, juegos y más."><link rel=preconnect href=https://cdn.jsdelivr.net crossorigin><link rel=preload as=style crossorigin href=https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel=stylesheet crossorigin href=https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css></noscript><script>const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
       
       // 운영 환경(localhost가 아닐 때)에만 GA 원격 스크립트 로드
       if (!isLocalhost) {
@@ -18,9 +18,20 @@
         }
       }
       window.gtag = gtag; // 앱 크래시 방지를 위해 전역 등록
+
+      // 안드로이드 앱(웹뷰) 판정 — src/utils/env.js의 isAndroidApp과 같은 조건
+      var tmIsAndroidApp = navigator.userAgent.indexOf('TeamMaker_Android') !== -1 || typeof window.TeamMakerBridge !== 'undefined';
+
       gtag('js', new Date());
+      if (tmIsAndroidApp) {
+        gtag('set', 'user_properties', { app_environment: 'android_app' });
+        // 앱 웹뷰에서는 GA가 광고용 신호(Google signals·광고 개인화)를 보내지 않게 한다
+        gtag('set', { allow_google_signals: false, allow_ad_personalization_signals: false });
+      }
       gtag('config', 'G-XW8M3R5HQF');
-      gtag('config', 'AW-682459307'); // Google Ads</script><script defer src=/js/vendor.18159299.js></script><script defer src=/js/app.a27f7157.js></script><link href=/css/vendor.b686b049.css rel=stylesheet><link href=/css/app.edc78298.css rel=stylesheet>  <meta name="twitter:card" content="summary_large_image">
+      if (!tmIsAndroidApp) {
+        gtag('config', 'AW-682459307'); // Google Ads
+      }</script><script defer src=/js/vendor.82182e59.js></script><script defer src=/js/app.f4f358a2.js></script><link href=/css/vendor.b686b049.css rel=stylesheet><link href=/css/app.edc78298.css rel=stylesheet>  <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Creador de Equipos - Generador Aleatorio Equilibrado | Team Maker">
     <meta name="twitter:description" content="Crea equipos equilibrados automáticamente para deportes, juegos y más.">
     <meta name="twitter:image" content="https://hobbada.github.io/og_img.jpg">
@@ -36,4 +47,12 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Para qué sirve este generador de equipos aleatorios?","acceptedAnswer":{"@type":"Answer","text":"Sirve para <b>hacer equipos</b> en partidos de fútbol, baloncesto o vóleibol, <b>armar equipos</b> en torneos de videojuegos (League of Legends, Valorant), <b>dividir la clase en grupos</b> para trabajos escolares o repartir a la gente en actividades de empresa. Siempre que haya que <b>dividir a un grupo en equipos equilibrados</b>, este <b>sorteo de equipos</b> lo resuelve en segundos y sin discusiones."}},{"@type":"Question","name":"¿Y si hay personas que no pueden ir en el mismo equipo?","acceptedAnswer":{"@type":"Answer","text":"Para eso está <b>Separar personas</b>: pon en un mismo grupo a quienes no quieres que coincidan y el generador los repartirá en equipos distintos. Es ideal para <b>repartir a los mejores jugadores</b> entre todos los equipos o para separar a quienes nunca se ponen de acuerdo."}},{"@type":"Question","name":"¿Puedo hacer que dos personas vayan siempre en el mismo equipo?","acceptedAnswer":{"@type":"Answer","text":"Sí. Con <b>Juntar personas</b>, quienes estén en el mismo grupo saldrán juntos por muchas veces que repitas el sorteo. Es perfecto para <b>parejas, madres o padres con sus hijos y principiantes que necesitan a alguien que los ayude</b>."}},{"@type":"Question","name":"¿Cómo hago equipos equilibrados si hay niveles muy distintos?","acceptedAnswer":{"@type":"Answer","text":"Activa el <b>modo por nivel</b> y ponle a cada persona una nota del 1 al 10. Al <b>hacer los equipos</b>, el generador reparte a la gente para que <b>la puntuación total de cada equipo quede lo más parecida posible</b>, así los partidos salen igualados de verdad."}},{"@type":"Question","name":"¿Es gratis? ¿Hay que registrarse o instalar algo?","acceptedAnswer":{"@type":"Answer","text":"Es <b>100% gratis</b>: funciona en el navegador, sin registro y sin instalar ninguna app. Tampoco hay <b>límite de personas</b>, así que puedes <b>armar equipos</b> para un partido de 10 o para un evento de 200. Al terminar, comparte el resultado con un enlace, cópialo como texto o guárdalo como imagen."}}]}</script>
   <meta property="og:locale" content="es_ES">
   <meta property="og:site_name" content="Team Maker">
-</head><body><div id=q-app></div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4535083787375333" crossorigin=anonymous></script></body></html>
+</head><body><div id=q-app></div><script id=tm-adsense-loader>(function () {
+        var isApp = navigator.userAgent.indexOf('TeamMaker_Android') !== -1 || typeof window.TeamMakerBridge !== 'undefined';
+        if (isApp) return;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4535083787375333';
+        s.crossOrigin = 'anonymous';
+        document.body.appendChild(s);
+      })();</script></body></html>
