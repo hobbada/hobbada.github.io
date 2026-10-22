@@ -25,17 +25,17 @@
 </head>
 <body>
   <!-- 한국어 -->
-  <div class="lang-section">
+  <div class="lang-section" id="ko">
     <h1>개인정보 처리방침</h1>
-    <p><strong>시행일자:</strong> 2026년 10월 14일</p>
+    <p><strong>시행일자:</strong> 2026년 10월 22일</p>
 
-    <p>팀짜기(Team Maker) 애플리케이션(Google Play에 등록된 Android 앱, 패키지명 com.hobbada.teammaker) 및 웹사이트 hobbada.github.io(이하 "서비스")는 이용자의 개인정보를 중요시하며, 관련 법령을 준수하고 있습니다. 본 방침은 서비스가 수집하는 정보와 그 사용 목적에 대해 설명합니다.</p>
+    <p>팀짜기(Team Maker) 애플리케이션(Google Play에 등록된 Android 앱과 App Store에 등록된 iOS 앱, 패키지명·번들 ID com.hobbada.teammaker) 및 웹사이트 hobbada.github.io(이하 "서비스")는 이용자의 개인정보를 중요시하며, 관련 법령을 준수하고 있습니다. 본 방침은 서비스가 수집하는 정보와 그 사용 목적에 대해 설명합니다.</p>
 
     <h2>1. 수집하는 개인정보 항목 및 수집 방법</h2>
     <p>본 서비스는 회원가입을 요구하지 않으나, 서비스 제공 및 품질 향상을 위해 아래와 같은 정보를 수집할 수 있습니다.</p>
     <ul>
       <li><strong>이용자 입력 정보:</strong> 팀 구성을 위해 입력하는 이름, 능력치, 그룹, 주장 여부 등의 데이터. 입력한 명단은 이용자의 기기(브라우저·앱 저장소)에만 저장되며, 결과 공유 기능(링크 공유·복사, 카카오톡·WhatsApp·LINE 공유)을 사용할 때에만 팀 편성 결과가 클라우드 데이터베이스(Supabase)에 저장됩니다. <strong>공유된 결과는 링크를 받은 사람이 볼 수 있도록 공개 저장소에 저장되므로 제3자도 열람할 수 있습니다.</strong> 공개를 원하지 않는 정보(실명 등)는 입력하지 마시고 별명 등을 사용하시기 바랍니다. 2026년 4월 9일경 이전에 만들어진 공유 결과는 이전 결과 서버(team-api.sanvit.org)에 저장되어 있습니다. 공유 링크를 열었을 때 결과를 Supabase에서 찾지 못하면 이 서버에서 결과를 조회합니다(이전 결과에는 아래 5항의 3개월 자동 삭제가 적용되지 않으며, 삭제를 요청하실 수 있습니다).</li>
-      <li><strong>자동 수집 정보:</strong> 기기 정보, 운영체제 버전, 브라우저 종류, IP 주소, IP 주소로 추정한 대략적인 위치(국가·도시 수준), 접속 로그, 서비스 이용 기록, 오류 정보, 쿠키, (앱) Android 광고 ID.</li>
+      <li><strong>자동 수집 정보:</strong> 기기 정보, 운영체제 버전, 브라우저 종류, IP 주소, IP 주소로 추정한 대략적인 위치(국가·도시 수준), 접속 로그, 서비스 이용 기록, 오류 정보, 쿠키, (Android 앱) Android 광고 ID, (iOS 앱) 광고 사기 방지·노출 빈도 제한 등에 쓰이는 기기 식별자(예: 앱 공급업체 식별자). iOS 앱은 광고 식별자(IDFA)를 사용하지 않습니다.</li>
       <li><strong>이벤트 경품 지급 정보 (웹 한국어 페이지):</strong> 당첨자가 이메일로 연락한 경우 이메일 주소와 이메일에 담긴 정보(당첨 화면 캡처 등), 그리고 경품 전달을 위해 당첨자와 협의해 받는 연락처(기프티콘을 받을 휴대전화 번호, 배송 주소 등).</li>
     </ul>
 
@@ -45,7 +45,7 @@
       <li>결과 공유 링크 기능 제공 (데이터베이스 저장)</li>
       <li>서비스 접속 통계 분석 및 성능·오류 개선 (Google Analytics, Sentry)</li>
       <li>광고 송출 (앱: Google AdMob / 웹: Google AdSense, 카카오 AdFit)</li>
-      <li>광고 전환 측정 (웹: Google Ads / 앱: 앱 화면의 Google Analytics와 연결된 Google Ads, 광고 개인화 없이)</li>
+      <li>광고 전환 측정 (웹: Google Ads / Android 앱: 앱 화면의 Google Analytics와 연결된 Google Ads, 광고 개인화 없이 / iOS 앱: 하지 않음)</li>
       <li>이벤트 경품 지급 (웹 한국어 페이지의 이벤트 당첨자가 연락한 경우, 받은 이메일 주소·연락처를 당첨 확인과 경품 전달에만 이용)</li>
     </ul>
 
@@ -63,7 +63,8 @@
       <li><strong>GitHub Sponsors:</strong> 웹사이트의 후원 버튼(GitHub에서 불러오는 화면)</li>
       <li><strong>광고:</strong>
         <ul>
-          <li><strong>모바일 앱:</strong> Google AdMob (광고 제공을 위해 광고 ID, IP 주소 등을 수집할 수 있음). 앱 화면 안에서는 AdSense·AdFit 광고를 표시하지 않습니다. 또한 앱 화면(웹 콘텐츠) 안의 Google Analytics는 연결된 Google Ads로 주요 이벤트(예: 팀짜기 버튼 사용)를 광고 전환 측정용으로 보내며, 이를 위해 Google Ads 쿠키(_gcl_au)를 저장할 수 있습니다. 이 정보는 광고 개인화에 쓰지 않도록 설정되어 있습니다.</li>
+          <li><strong>Android 앱:</strong> Google AdMob (광고 제공을 위해 광고 ID, IP 주소 등을 수집할 수 있음). 앱 화면 안에서는 AdSense·AdFit 광고를 표시하지 않습니다. 또한 앱 화면(웹 콘텐츠) 안의 Google Analytics는 연결된 Google Ads로 주요 이벤트(예: 팀짜기 버튼 사용)를 광고 전환 측정용으로 보내며, 이를 위해 Google Ads 쿠키(_gcl_au)를 저장할 수 있습니다. 이 정보는 광고 개인화에 쓰지 않도록 설정되어 있습니다.</li>
+          <li><strong>iOS 앱:</strong> Google AdMob (광고 제공·측정·사기 방지를 위해 IP 주소, 기기 정보 등을 수집할 수 있음). 개인 맞춤이 아닌 광고만 요청하며, 앱 추적 투명성(ATT) 권한을 요청하지 않으므로 광고 식별자(IDFA)를 사용하지 않습니다. 앱 화면 안에서는 AdSense·AdFit 광고를 표시하지 않습니다. 앱 화면(웹 콘텐츠) 안의 Google Analytics는 광고용 동의(광고 저장·광고용 사용자 데이터·광고 개인화)를 모두 '거부'로 설정해 Google Ads 쿠키를 저장하지 않으며, 앱이 Google Ads 전환·광고 측정 요청을 차단합니다. 이용자의 데이터를 다른 회사의 데이터와 연결해 맞춤 광고나 광고 측정에 쓰지 않습니다(추적하지 않음).</li>
           <li><strong>웹사이트:</strong> Google AdSense 및 카카오 AdFit (쿠키 기반 광고), Google Ads (광고 전환 측정)</li>
         </ul>
       </li>
@@ -84,20 +85,20 @@
     <p>Supabase에 저장된 공유 결과 데이터는 생성 후 3개월이 지나면 자동으로 삭제되며, 그 전에 삭제를 요청하시면 지체 없이 삭제합니다. 이전 결과 서버에 남아 있는 2026년 4월 9일경 이전 결과도 요청하시면 삭제합니다. 경품 지급을 위해 받은 이메일·연락처는 경품 지급이 끝나면 지체 없이 삭제합니다(법령에 따라 보관해야 하는 경우에는 그 기간 동안만 보관). 삭제는 데이터베이스에서 복구할 수 없는 방법으로 이루어집니다. 이용 기록 등 통계형 데이터는 각 분석 서비스의 보관 정책에 따라 보관 후 삭제됩니다.</p>
 
     <h2>6. 쿠키 및 광고 식별자</h2>
-    <p>웹사이트와 앱의 화면(웹 콘텐츠)은 분석과 광고를 위해 쿠키를 사용하며, 앱은 Android 광고 ID를 사용해 광고를 제공할 수 있습니다.</p>
+    <p>웹사이트와 Android 앱의 화면(웹 콘텐츠)은 분석과 광고를 위해, iOS 앱의 화면은 분석을 위해서만 쿠키를 사용합니다. Android 앱은 Android 광고 ID를 사용해 광고를 제공할 수 있으며, iOS 앱은 광고 식별자(IDFA)를 사용하지 않습니다.</p>
     <ul>
       <li>Google을 포함한 제3자 광고 사업자는 쿠키를 사용하여 이용자가 이 웹사이트나 다른 웹사이트를 이전에 방문한 기록을 바탕으로 광고를 게재합니다.</li>
       <li>Google은 광고 쿠키를 사용하여 이 사이트 및 인터넷의 다른 사이트 방문 기록을 바탕으로 Google과 파트너가 이용자에게 광고를 게재할 수 있도록 합니다.</li>
       <li>이용자는 <a href="https://adssettings.google.com/" rel="noopener">Google 광고 설정</a>에서 맞춤 광고를 거부할 수 있으며, <a href="https://www.aboutads.info/choices/" rel="noopener">www.aboutads.info</a>에서 제3자 사업자의 맞춤 광고용 쿠키 사용을 거부할 수 있습니다.</li>
       <li>카카오 AdFit의 맞춤형 광고는 카카오계정 관리의 맞춤형 광고 동의 철회 또는 브라우저의 쿠키 차단으로 거부할 수 있습니다.</li>
-      <li>브라우저 설정에서 쿠키를 거부하거나, 기기 설정(설정 &gt; Google &gt; 광고)에서 광고 ID를 재설정·삭제할 수 있습니다.</li>
+      <li>브라우저 설정에서 쿠키를 거부하거나, Android 기기 설정(설정 &gt; Google &gt; 광고)에서 광고 ID를 재설정·삭제할 수 있습니다. iOS에서는 설정 &gt; 개인정보 보호 및 보안 &gt; 추적에서 앱의 추적 요청을 관리할 수 있습니다(이 앱은 추적 권한을 요청하지 않습니다).</li>
     </ul>
 
     <h2>7. 개인정보의 안전성 확보 조치</h2>
     <p>서비스와 외부 서비스 간의 모든 데이터 전송은 암호화된 연결(HTTPS)로 이루어집니다. 회원 계정·비밀번호·결제 정보 등은 수집하지 않으며, 수집한 정보를 판매하지 않습니다. 공유 결과는 3개월이 지나면 자동 삭제해 보관하는 정보를 최소화합니다.</p>
 
     <h2>8. 이용자의 권리 및 삭제 요청</h2>
-    <p>이용자는 자신이 공유한 결과 데이터의 열람·정정·삭제·처리정지를 요청할 수 있습니다. 삭제를 원하시면 해당 공유 링크(또는 결과 ID)를 아래 이메일로 보내 주시면 확인 후 지체 없이 삭제합니다. 기기에 저장된 명단은 브라우저의 사이트 데이터 또는 앱 데이터를 삭제하면 지워집니다.</p>
+    <p>이용자는 자신이 공유한 결과 데이터의 열람·정정·삭제·처리정지를 요청할 수 있습니다. 삭제를 원하시면 해당 공유 링크(또는 결과 ID)를 아래 이메일로 보내 주시면 확인 후 지체 없이 삭제합니다. 기기에 저장된 명단은 브라우저의 사이트 데이터 또는 앱 데이터를 삭제하면(iOS 앱은 앱을 삭제하면) 지워집니다.</p>
 
     <h2>9. 개인정보 보호책임자 및 문의</h2>
     <p>개인정보 처리와 관련된 문의, 불만 처리, 피해 구제는 아래 개인정보 보호책임자에게 문의해 주시기 바랍니다.</p>
@@ -113,17 +114,17 @@
   <hr class="lang-divider">
 
   <!-- English -->
-  <div class="lang-section" lang="en">
+  <div class="lang-section" id="en" lang="en">
     <h1>Privacy Policy</h1>
-    <p><strong>Effective Date:</strong> October 14, 2026</p>
+    <p><strong>Effective Date:</strong> October 22, 2026</p>
 
-    <p>The Team Maker application (the Android app on Google Play, package name com.hobbada.teammaker) and the website hobbada.github.io (collectively, the "Service") values user privacy and complies with applicable laws. This policy explains what information the Service collects and how it is used.</p>
+    <p>The Team Maker application (the Android app on Google Play and the iOS app on the App Store, package name and bundle ID com.hobbada.teammaker) and the website hobbada.github.io (collectively, the "Service") values user privacy and complies with applicable laws. This policy explains what information the Service collects and how it is used.</p>
 
     <h2>1. Information We Collect</h2>
     <p>The Service does not require account registration. However, we may collect the following information to provide and improve the Service:</p>
     <ul>
       <li><strong>User-provided information:</strong> Names, skill ratings, groups, and captain selections entered for team generation. The member list you enter is stored only on your device (browser or app storage). A team result is stored in a cloud database (Supabase) only when you use a result sharing feature (sharing or copying a link, or sharing via KakaoTalk, WhatsApp, or LINE). <strong>Shared results are stored in publicly readable storage so that anyone with the link can view them, which means third parties can also access them.</strong> Please do not enter information you do not want to be seen, such as real names; use nicknames instead. Shared results created before around April 9, 2026 are stored on our previous result server (team-api.sanvit.org). When a shared link is opened and the result is not found in Supabase, it is looked up on this server (the three-month automatic deletion in section 5 does not apply to those older results; you can ask us to delete them).</li>
-      <li><strong>Automatically collected information:</strong> Device information, OS version, browser type, IP address, approximate location estimated from the IP address (country or city level), access logs, usage records, error reports, cookies, and (in the app) the Android advertising ID.</li>
+      <li><strong>Automatically collected information:</strong> Device information, OS version, browser type, IP address, approximate location estimated from the IP address (country or city level), access logs, usage records, error reports, cookies, the Android advertising ID (in the Android app), and device identifiers used for ad fraud prevention and frequency capping, such as the identifier for vendors (in the iOS app). The iOS app does not use the advertising identifier (IDFA).</li>
       <li><strong>Prize fulfillment information (Korean web pages):</strong> If a winner of the event contacts us by email, the email address and the information in the email (such as a screenshot of the winning screen), and the contact details agreed with the winner to deliver the prize (such as a mobile phone number for a gift voucher or a delivery address).</li>
     </ul>
 
@@ -133,7 +134,7 @@
       <li>Providing the result sharing link feature (database storage)</li>
       <li>Usage statistics, performance and error improvement (Google Analytics, Sentry)</li>
       <li>Serving advertisements (app: Google AdMob / website: Google AdSense, Kakao AdFit)</li>
-      <li>Measuring ad conversions (website: Google Ads; app: Google Ads through the Google Analytics property linked to it, without ad personalization)</li>
+      <li>Measuring ad conversions (website: Google Ads; Android app: Google Ads through the Google Analytics property linked to it, without ad personalization; iOS app: not performed)</li>
       <li>Prize fulfillment (if a winner of the event on the Korean web pages contacts us, the email address and contact details we receive are used only to confirm the win and deliver the prize)</li>
     </ul>
 
@@ -151,7 +152,8 @@
       <li><strong>GitHub Sponsors:</strong> The sponsor button on the website (loaded from GitHub)</li>
       <li><strong>Advertising:</strong>
         <ul>
-          <li><strong>Mobile app:</strong> Google AdMob (may collect the advertising ID, IP address, etc. to serve ads). AdSense and AdFit ads are not shown inside the app. Inside the app's screens (web content), Google Analytics also sends key events (such as tapping Generate Teams) to the linked Google Ads account for conversion measurement and may store the Google Ads cookie (_gcl_au); this data is flagged so that it is not used for ad personalization.</li>
+          <li><strong>Android app:</strong> Google AdMob (may collect the advertising ID, IP address, etc. to serve ads). AdSense and AdFit ads are not shown inside the app. Inside the app's screens (web content), Google Analytics also sends key events (such as tapping Generate Teams) to the linked Google Ads account for conversion measurement and may store the Google Ads cookie (_gcl_au); this data is flagged so that it is not used for ad personalization.</li>
+          <li><strong>iOS app:</strong> Google AdMob (may collect the IP address, device information, etc. to serve and measure ads and to prevent fraud). Only non-personalized ads are requested, and because the app does not ask for App Tracking Transparency permission, it does not use the advertising identifier (IDFA). AdSense and AdFit ads are not shown inside the app. Inside the app's screens (web content), Google Analytics has all advertising consent signals (ad storage, ad user data, ad personalization) set to "denied", so it does not store the Google Ads cookie, and the app blocks Google Ads conversion and ad-measurement requests. We do not link your data with other companies' data for targeted advertising or ad measurement (no tracking).</li>
           <li><strong>Website:</strong> Google AdSense and Kakao AdFit (cookie-based advertising), Google Ads (ad conversion measurement)</li>
         </ul>
       </li>
@@ -172,20 +174,20 @@
     <p>Shared result data stored in Supabase is automatically deleted three months after it is created, and is deleted without undue delay if you ask us to delete it earlier. Results created before around April 9, 2026 that remain on the previous result server are also deleted on request. Email addresses and contact details received for prize fulfillment are deleted without undue delay once the prize has been delivered (unless the law requires us to keep them, in which case they are kept only for that period). Deleted data is removed from the database so that it cannot be recovered. Statistical data such as usage logs is kept according to each analytics provider's retention policy and then deleted.</p>
 
     <h2>6. Cookies and Advertising Identifiers</h2>
-    <p>The website and the app's screens (web content) use cookies for analytics and advertising, and the app may use the Android advertising ID to serve ads.</p>
+    <p>The website and the Android app's screens use cookies for analytics and advertising; the iOS app's screens use cookies for analytics only. The Android app may use the Android advertising ID to serve ads; the iOS app does not use the advertising identifier (IDFA).</p>
     <ul>
       <li>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites.</li>
       <li>Google's use of advertising cookies enables it and its partners to serve ads to users based on their visits to this site and/or other sites on the Internet.</li>
       <li>You may opt out of personalized advertising by visiting <a href="https://adssettings.google.com/" rel="noopener">Google Ads Settings</a>, and you may opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info/choices/" rel="noopener">www.aboutads.info</a>.</li>
       <li>You can opt out of Kakao AdFit personalized ads by withdrawing consent for personalized ads in your Kakao account settings or by blocking cookies in your browser.</li>
-      <li>You can refuse cookies in your browser settings, and reset or delete the advertising ID in your device settings (Settings &gt; Google &gt; Ads).</li>
+      <li>You can refuse cookies in your browser settings, and reset or delete the advertising ID in your Android device settings (Settings &gt; Google &gt; Ads). On iOS, you can manage apps' tracking requests in Settings &gt; Privacy &amp; Security &gt; Tracking (this app does not ask for tracking permission).</li>
     </ul>
 
     <h2>7. Security</h2>
     <p>All data transmitted between the Service and external services is sent over an encrypted connection (HTTPS). We do not collect account credentials, passwords, or payment information, and we do not sell the information we collect. We delete shared results automatically after three months to minimize the data we keep.</p>
 
     <h2>8. Your Rights and Deletion Requests</h2>
-    <p>You may request access to, correction or deletion of, or the suspension of processing of result data you have shared. To have a shared result deleted, email its share link (or result ID) to the address below and we will delete it without undue delay. The member list stored on your device is removed when you clear the site data in your browser or the app's data.</p>
+    <p>You may request access to, correction or deletion of, or the suspension of processing of result data you have shared. To have a shared result deleted, email its share link (or result ID) to the address below and we will delete it without undue delay. The member list stored on your device is removed when you clear the site data in your browser or the app's data (for the iOS app, when you delete the app).</p>
 
     <h2>9. Privacy Officer and Contact</h2>
     <p>For inquiries, complaints, or remedies regarding privacy, please contact our privacy officer:</p>

@@ -19,19 +19,37 @@
       }
       window.gtag = gtag; // 앱 크래시 방지를 위해 전역 등록
 
-      // 안드로이드 앱(웹뷰) 판정 — src/utils/env.js의 isAndroidApp과 같은 조건
-      var tmIsAndroidApp = navigator.userAgent.indexOf('TeamMaker_Android') !== -1 || typeof window.TeamMakerBridge !== 'undefined';
+      // 앱(웹뷰) 판정 — src/utils/env.js의 isAndroidApp(앱 전체)·isIosApp과 같은 조건
+      // iOS 앱: UA 끝의 iOS 표식(env.js IOS_APP_UA_MARKER) 또는 WKWebView 메시지 핸들러(window.webkit.messageHandlers의 앱 채널)
+      // (표식 글자는 주석에 쓰지 않는다 — postbuild.mjs·check-live-web.sh·앱이 문서에서 이 글자를 찾아 iOS 분기가 있는지 확인함)
+      var tmIsIosApp = navigator.userAgent.indexOf('TeamMaker_iOS') !== -1 || !!(window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.TeamMakerBridge);
+      var tmIsApp = tmIsIosApp || navigator.userAgent.indexOf('TeamMaker_Android') !== -1 || typeof window.TeamMakerBridge !== 'undefined';
 
+      if (tmIsIosApp) {
+        // iOS 앱(App Store 심사 지침 5.1.2 추적 규정): 광고용 저장·광고용 사용자 데이터·광고 개인화 동의를 거부로 시작해
+        // GA4가 Google Ads 쿠키(_gcl_au)를 쓰지 않고, 광고 전환·리마케팅에 이용자를 연결하지 않게 한다.
+        // 동의 기본값은 config보다 먼저 들어가야 한다(이 동기 스크립트 안의 순서로 보장)
+        gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+        gtag('set', 'ads_data_redaction', true);
+      }
       gtag('js', new Date());
-      if (tmIsAndroidApp) {
-        gtag('set', 'user_properties', { app_environment: 'android_app' });
+      if (tmIsApp) {
+        // 앱 셸 v1.1+(UA 끝 ' TMShell/<n>', n ≥ 1 — env.js appShellVersion과 같은 조건)만 앱 버전(UA의 앱 표식 뒤 숫자)을 사용자 속성 app_version으로 함께 보낸다.
+        // 셸 토큰이 없는 앱 v1.0(비공개 테스트 중인 안드로이드 앱)은 지금과 똑같이 app_environment만 보낸다(그 GA 데이터·dataLayer를 바꾸지 않음)
+        var tmShellVersion = parseInt((navigator.userAgent.match(/\bTMShell\/(\d+)/) || [])[1], 10) || 0;
+        var tmAppVersion = (navigator.userAgent.match(/TeamMaker_(?:Android|iOS)\/([0-9.]+)/) || [])[1] || 'unknown';
+        if (tmShellVersion >= 1) {
+          gtag('set', 'user_properties', { app_environment: tmIsIosApp ? 'ios_app' : 'android_app', app_version: tmAppVersion });
+        } else {
+          gtag('set', 'user_properties', { app_environment: tmIsIosApp ? 'ios_app' : 'android_app' });
+        }
         // 앱 웹뷰에서는 GA가 광고용 신호(Google signals·광고 개인화)를 보내지 않게 한다
         gtag('set', { allow_google_signals: false, allow_ad_personalization_signals: false });
       }
       gtag('config', 'G-XW8M3R5HQF');
-      if (!tmIsAndroidApp) {
+      if (!tmIsApp) {
         gtag('config', 'AW-682459307'); // Google Ads
-      }</script><script defer src=/js/vendor.82182e59.js></script><script defer src=/js/app.d89320df.js></script><link href=/css/vendor.b686b049.css rel=stylesheet><link href=/css/app.f7ecdf37.css rel=stylesheet>  <meta name="twitter:card" content="summary_large_image">
+      }</script><script defer src=/js/vendor.82182e59.js></script><script defer src=/js/app.9a528290.js></script><link href=/css/vendor.b686b049.css rel=stylesheet><link href=/css/app.7cb6eb1f.css rel=stylesheet>  <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Balanced Random Team Generator | Team Maker">
     <meta name="twitter:description" content="Free online team generator. Automatically create balanced random teams for sports, games, classrooms, and more.">
     <meta name="twitter:image" content="https://hobbada.github.io/og_img.jpg">
@@ -48,7 +66,7 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Team Maker">
 </head><body><div id=q-app></div><script id=tm-adsense-loader>(function () {
-        var isApp = navigator.userAgent.indexOf('TeamMaker_Android') !== -1 || typeof window.TeamMakerBridge !== 'undefined';
+        var isApp = navigator.userAgent.indexOf('TeamMaker_Android') !== -1 || navigator.userAgent.indexOf('TeamMaker_iOS') !== -1 || typeof window.TeamMakerBridge !== 'undefined';
         if (isApp) return;
         var s = document.createElement('script');
         s.async = true;
