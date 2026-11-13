@@ -1,0 +1,48 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "6S3P3NH74J.com.hobbada.teammaker"
+        ],
+        "components": [
+          {
+            "/": "/",
+            "?": {
+              "result": "?*"
+            },
+            "comment": "공유 결과(한국어)"
+          },
+          {
+            "/": "/en/",
+            "?": {
+              "result": "?*"
+            },
+            "comment": "공유 결과(en)"
+          },
+          {
+            "/": "/ja/",
+            "?": {
+              "result": "?*"
+            },
+            "comment": "공유 결과(ja)"
+          },
+          {
+            "/": "/es/",
+            "?": {
+              "result": "?*"
+            },
+            "comment": "공유 결과(es)"
+          },
+          {
+            "/": "/pt/",
+            "?": {
+              "result": "?*"
+            },
+            "comment": "공유 결과(pt)"
+          }
+        ]
+      }
+    ]
+  }
+}
