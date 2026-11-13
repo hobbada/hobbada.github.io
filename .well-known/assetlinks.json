@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.hobbada.teammaker",
+      "sha256_cert_fingerprints": [
+        "24:B6:95:13:86:7E:C9:92:CA:0C:D6:3B:92:D1:E2:F5:04:0F:FF:62:66:07:14:8D:81:49:02:50:96:FB:57:A1",
+        "E7:A0:CF:0B:C0:B9:B0:CB:C4:14:7C:BF:93:0D:B6:9F:C2:F4:4C:79:48:F9:C5:39:F1:B5:BD:57:4F:8F:B4:8F"
+      ]
+    }
+  }
+]
